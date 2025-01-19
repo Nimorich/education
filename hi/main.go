@@ -1,6 +1,8 @@
 package main
 
-import "greeting"
+import (
+	"education/greeting"
+)
 
 func main() {
 	greeting.Hello()
