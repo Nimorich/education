@@ -13,7 +13,7 @@ func main() {
 	fmt.Println("Hello helix")
 	PrintSum(28, 35)
 	PrintSum(45, 28)
-	PrintSum(83, 324)
+
 }
 
 func PrintSum(n1 int, n2 int) {
