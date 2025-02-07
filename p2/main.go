@@ -44,6 +44,7 @@ func main() {
 		FirstName: "Susan",
 		Age:       30,
 	}))
+	
 }
 
 type UserCreateRequest struct {
