@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	employees := PersonList{{Age: 18}, {Age: 44}, {Age: 18},}
+	employees := PersonList{{Age: 18}, {Age: 44}, {Age: 18}}
 	employees.GetAgePopularity()
 }
 
@@ -18,5 +18,3 @@ func (pl PersonList) GetAgePopularity() map[uint8]int {
 	return plm
 
 }
-
-

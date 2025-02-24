@@ -6,9 +6,11 @@ import (
 	"strconv"
 )
 
-func main(){
+func main() {
+    fmt.Println("jsa")
+	//fmt.Println("Hello")
 	arguments := os.Args
-	if len(arguments) == 1{
+	if len(arguments) == 1 {
 		fmt.Println("Need one or more arguments!")
 		return
 	}

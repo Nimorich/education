@@ -25,7 +25,8 @@ func TestPrint(p Printer) {
 // в функцию TestPrint передается структура User,
 // и так как она реализует интерфейс Printer, все работает без ошибок
 func main() {
-	TestPrint(&User{email: "test@test.com"})
+    fmt.Println("Hello")
+    TestPrint(&User{email: "test@test.com"})
 	//u := User{email: "testik@testail.com"}
 	//DoHTTPCall(u.email)
 }
