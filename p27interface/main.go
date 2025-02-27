@@ -18,13 +18,14 @@ func SaySmth(s Sayer) {
 
 func main() {
 	fmt.Println("ks")
+	fmt.Print("goland")
 	SaySmth(&Dog{name: "Goofy"})
 }
 
 type OverflowErr struct {
-    msg string
+	msg string
 }
 
-func (e error) (OverflowErr, error) {
-    return e.msg, 
-}
+//func (e error) (OverflowErr, error) {
+//    return e.msg,
+//}
