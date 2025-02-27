@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func modifyArr(nums [3]int) {
 	nums[0] = 2
 	nums[1] = 1
@@ -11,6 +7,7 @@ func modifyArr(nums [3]int) {
 }
 
 func main() {
+	fmt.Println("Hello")
 	a := [3]int{1, 2, 3}
 
 	modifyArr(a)

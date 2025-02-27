@@ -6,7 +6,22 @@ import (
 	"os"
 )
 
+type user struct {
+	name string
+	age  int
+}
+
+func (u *user) getUser() (n string, a int) {
+	return u.name, u.age
+}
+
+type users interface {
+	getUser()
+}
+
 func main() {
+	u := user{"Vasya", 26}
+	u.getUser()
 	file := createFile()
 	writeFile(&file)
 	defer file.Close()
@@ -38,6 +53,7 @@ func writeFile(file *os.File) {
 	file.WriteString(date + " " + name + "\n")
 	fmt.Println("................................................")
 	fmt.Printf("Поздравляю %s. Номер забронирован на: %s\n", name, date)
+	file.Close()
 }
 func createFile() os.File {
 	_, err := os.Stat("hello.txt")
