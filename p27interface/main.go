@@ -17,6 +17,7 @@ func SaySmth(s Sayer) {
 }
 
 func main() {
+	fmt.Println("Kaska")
 	fmt.Println("ks")
 	fmt.Print("goland")
 	SaySmth(&Dog{name: "Goofy"})

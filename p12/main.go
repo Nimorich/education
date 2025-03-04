@@ -3,6 +3,9 @@ package main
 import "fmt"
 
 func main() {
+	a := 23
+	fmt.Printf("HelloLsp %d", a)
+	fmt.Print("help")
 	//fmt.Println(byte('a'))
 	// fmt.Println(ShiftASCII("abc", 0))
 	// fmt.Println(ShiftASCII("abc1", 1))

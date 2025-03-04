@@ -1,5 +1,5 @@
 package main
-
+import "fmt"
 func ErrorMessageToCode(msg string) int {
 	switch msg {
 	case "OK":
@@ -21,6 +21,7 @@ func ErrorMessageToCode(msg string) int {
 	}
 }
 
-func main() {
+func main(){
+	fmt.Println("Hello emacs")
 
 }
