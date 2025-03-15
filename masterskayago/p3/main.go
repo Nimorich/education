@@ -5,42 +5,24 @@ import (
 	"fmt"
 )
 
-//	type greeting struct {
-//		SomeMessage string `json:"message"`
-//	}
-type person struct {
-	Lastname  string  `json:"lname"`
-	Firstname string  `json:"fname"`
-	Address   address `json:"address"`
-}
-type address struct {
-	Street  string `json:"street"`
-	City    string `json:"city"`
-	State   string `json:"state"`
-	ZipCode int    `json:"zipcode"`
+type book struct {
+	ISBN          string `json:"isbn"`
+	Title         string `json:"title"`
+	YearPublished int    `json:",omitempty"`
+	Author        string `json:",omitempty"`
+	CoAuthor      string `json:"-"`
 }
 
 func main() {
-	data := []byte(`
-	{
-		"lname": "Smith",
-		"fname": "John",
-		"address": {
-			"street": "Sulphur Springs Rd",
-			"city": "Park City",
-			"state": "VA",
-			"zipcode": 12345
-		}
-	}
-	`)
-	// if !json.Valid(data) {
-	// 	fmt.Printf("JSON is not valid: %s", data)
-	// 	os.Exit(1)
-	// }
-	var p person
-	err := json.Unmarshal(data, &p)
+	var b book
+	b.ISBN = "9933HIST"
+	b.Title = "Greatest of all Books"
+	b.Author = "John Adams"
+	b.CoAuthor = "Can't see me"
+	json, err := json.Marshal(b)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Printf("%+v", p)
+	fmt.Printf("%s", json)
+
 }
