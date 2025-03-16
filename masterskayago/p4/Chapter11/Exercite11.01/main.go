@@ -3,14 +3,16 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 )
 
 type student struct {
-	StudentID     int      `json:"id"`
+	StudentId     int      `json:"id"`
 	LastName      string   `json:"lname"`
-	MiddleInitial string   `json:"minitial"`
+	MiddleInitial string   `json:"mname,omitempty"`
 	FirstName     string   `json:"fname"`
-	IsEnrolled    bool     `json:"enrolled"`
+	IsMarried     bool     `json:"-"`
+	IsEnrolled    bool     `json:"enrolled,omitempty"`
 	Courses       []course `json:"classes"`
 }
 type course struct {
@@ -19,36 +21,30 @@ type course struct {
 	Hours  int    `json:"coursehours"`
 }
 
+func newStudent(studentID int, lastName, middleInitial, firstName string, isMarried, isEnrolled bool) student {
+	s := student{StudentId: studentID, LastName: lastName, MiddleInitial: middleInitial, FirstName: firstName, IsMarried: isMarried, IsEnrolled: isEnrolled}
+	return s
+}
 func main() {
-	data := []byte(`
-	{
-		"id": 123,
-		"lname": "Smith",
-		"minitial": null,
-		"fname": "John",
-		"enrolled": true,
-		"classes": [{
-			"coursename": "Intro to Golang",
-			"coursenum": 101,
-			"coursehours": 4
-		},
-		{
-			"coursename": "English Lit",
-			"coursenum": 101,
-			"coursehours": 3
-		},
-		{
-		    "coursename": "World History",
-			"coursenum": 101,
-			"coursehours": 3
-		}
-		]
-	}
-	`)
-	var s student
-	err := json.Unmarshal(data, &s)
+	s := newStudent(1, "Williams", "s", "Felicia", false, false)
+	student1, err := json.MarshalIndent(s, "", "    ")
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
-	fmt.Println(s)
+	fmt.Println(string(student1))
+	fmt.Println()
+	s2 := newStudent(2, "Washington", "", "Bill", true, true)
+	c := course{Name: "World Lit", Number: 101, Hours: 3}
+	s2.Courses = append(s2.Courses, c)
+	c = course{Name: "Biology", Number: 201, Hours: 4}
+	s2.Courses = append(s2.Courses, c)
+	c = course{Name: "Intro to Go", Number: 101, Hours: 4}
+	s2.Courses = append(s2.Courses, c)
+	student2, err := json.MarshalIndent(s2, "", "    ")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	fmt.Println(string(student2))
 }
