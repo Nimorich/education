@@ -1,0 +1,58 @@
+   0.167596000s  INFO prepare_target{force=false package_id=lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes) target="lifetimes"}: cargo::core::compiler::fingerprint: fingerprint error for lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes)/Check { test: false }/TargetInner { name: "lifetimes", doc: true, ..: with_path("D:\\Work\\education\\RustProjects\\lifetimes\\src\\main.rs", Edition2024) }
+   0.167682400s  INFO prepare_target{force=false package_id=lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes) target="lifetimes"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Work\education\RustProjects\lifetimes\target\debug\.fingerprint\lifetimes-eb4d1cb936d63d4d\bin-lifetimes`
+
+Caused by:
+    Не удается найти указанный файл. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.182940500s  INFO prepare_target{force=false package_id=lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes) target="lifetimes"}: cargo::core::compiler::fingerprint: fingerprint error for lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes)/Check { test: true }/TargetInner { name: "lifetimes", doc: true, ..: with_path("D:\\Work\\education\\RustProjects\\lifetimes\\src\\main.rs", Edition2024) }
+   0.182967500s  INFO prepare_target{force=false package_id=lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes) target="lifetimes"}: cargo::core::compiler::fingerprint:     err: failed to read `D:\Work\education\RustProjects\lifetimes\target\debug\.fingerprint\lifetimes-4e24f30400ea86ef\test-bin-lifetimes`
+
+Caused by:
+    Не удается найти указанный файл. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+    Checking lifetimes v0.1.0 (D:\Work\education\RustProjects\lifetimes)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
